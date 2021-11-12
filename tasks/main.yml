@@ -1,0 +1,80 @@
+---
+# tasks file for ansible-anbox
+# Requeriments
+- name: Add Anbox PPA
+  ansible.builtin.apt_repository:
+    repo: ppa:morphis/anbox-support
+    update_cache: yes
+  tags: anbox
+
+- name: Install Requirements packages
+  apt:
+    pkg:
+    - android-tools-adb
+    - anbox-modules-dkms
+    - curl
+    - linux-headers-generic 
+    - lzip
+    - snapd
+    - software-properties-common
+    - squashfs-tools
+    - tar
+    - unzip
+    - wget
+    state: present
+  tags: anbox
+
+# Enable Kernel Modules
+- name: Add the ashmem_linux module
+  community.general.modprobe:
+    name: ashmem_linux
+    state: present
+  tags: anbox
+
+- name: Add the binder_linux module
+  community.general.modprobe:
+    name: binder_linux
+    state: present
+  tags: anbox
+
+- command: lsmod | grep -e ashmem_linux -e binder_linux
+  register: result_anbox_modules
+  failed_when: false
+  changed_when: false
+  tags: anbox
+
+- debug:
+    var: result_anbox_modules.stdout
+  tags: anbox
+
+# Anbox
+- name: Install anbox snap
+  snap:
+    name: --devmode anbox
+    channel: latest/beta
+  tags: anbox
+
+- name: Enable Android rootfs overlay
+  shell: snap set anbox rootfs-overlay.enable=true
+  args:
+    warn: no
+  tags: anbox
+
+- name: Restart Anbox
+  shell: snap restart anbox.container-manager
+  args:
+    warn: no
+  tags: anbox
+
+# anbox-playstore-installer
+- name: Download anbox-playstore-installer
+  get_url:
+    url: https://raw.githubusercontent.com/geeks-r-us/anbox-playstore-installer/master/install-playstore.sh
+    dest: /opt/anbox-playstore-installer/install-playstore.sh
+    mode: '0755'
+
+- name: Install anbox-playstore-installer
+  shell: /opt/anbox-playstore-installer/install-playstore.sh
+  args:
+    warn: no
+  tags: anbox
