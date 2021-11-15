@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/hackwish/ansible-anbox/compare/v1.0.0...v1.0.1) (2021-11-15)
+
+
+### Bug Fixes
+
+* **ansible:** update ppa removing update_cache ([2e41077](https://github.com/hackwish/ansible-anbox/commit/2e4107715a35970bbd0e7005fcd10e5d4974f66d))
+
 # 1.0.0 (2021-11-12)
 
 
