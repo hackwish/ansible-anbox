@@ -93,11 +93,12 @@
 - name: Download anbox-playstore-installer
   get_url:
     url: https://raw.githubusercontent.com/geeks-r-us/anbox-playstore-installer/master/install-playstore.sh
-    dest: /opt/anbox-playstore-installer/install-playstore.sh
+    dest: /opt/anbox-install-playstore.sh
     mode: '0755'
+  tags: anbox
 
 - name: Install anbox-playstore-installer
-  shell: /opt/anbox-playstore-installer/install-playstore.sh
+  shell: sh /opt/anbox-install-playstore.sh
   args:
     warn: no
   tags: anbox
