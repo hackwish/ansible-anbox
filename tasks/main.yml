@@ -69,9 +69,12 @@
 
 # Anbox
 - name: Install anbox snap
-  snap:
-    name: --devmode anbox
-    channel: latest/beta
+  shell: snap install --devmode --beta anbox
+  args:
+    warn: no
+  # snap:
+  #   name: --devmode anbox
+  #   channel: latest/beta
   tags: anbox
 
 - name: Enable Android rootfs overlay
