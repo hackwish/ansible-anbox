@@ -30,11 +30,41 @@
 - name: Install Requirements packages
   apt:
     pkg:
-    - android-tools-adb
     # - anbox-modules-dkms
+    - android-tools-adb
+    - build-essential
+    - cmake
+    - cmake-data
     - curl
+    - dbus
+    - debhelper
+    - google-mock
+    - libboost-dev 
+    - libboost-filesystem-dev
+    - libboost-iostreams-dev
+    - libboost-log-dev
+    - libboost-program-options-dev
+    - libboost-system-dev
+    - libboost-test-dev
+    - libboost-thread-dev
+    - libcap-dev
+    - libegl1-mesa-dev
+    - libexpat1-dev
+    - libgles2-mesa-dev
+    - libglm-dev
+    - libgtest-dev
+    - liblxc1
+    - libproperties-cpp-dev
+    - libprotobuf-dev
+    - libsdl2-dev
+    - libsdl2-image-dev
+    - libsystemd-dev
     - linux-headers-generic 
+    - lxc-dev
     - lzip
+    - pkg-config
+    - protobuf-compiler
+    - python3-minimal
     - snapd
     - software-properties-common
     - squashfs-tools
@@ -69,7 +99,7 @@
 
 # Anbox
 - name: Install anbox snap
-  shell: snap install --devmode --beta anbox
+  shell: snap install --devmode --edge anbox
   args:
     warn: no
   # snap:
@@ -99,6 +129,20 @@
 
 - name: Install anbox-playstore-installer
   shell: /opt/anbox-install-playstore.sh
+  args:
+    warn: no
+  tags: anbox
+
+# F-Droid
+- name: Download F-Droid
+  get_url:
+    url: https://f-droid.org/F-Droid.apk
+    dest: /opt/F-Droid.apk
+    mode: '0755'
+  tags: anbox
+
+- name: Install F-Droid
+  shell: adb install /opt/F-Droid.apk
   args:
     warn: no
   tags: anbox
