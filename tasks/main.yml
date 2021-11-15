@@ -98,7 +98,7 @@
   tags: anbox
 
 - name: Install anbox-playstore-installer
-  shell: sh /opt/anbox-install-playstore.sh
+  shell: /opt/anbox-install-playstore.sh
   args:
     warn: no
   tags: anbox
