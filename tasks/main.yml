@@ -4,8 +4,14 @@
 - name: Add Anbox PPA
   ansible.builtin.apt_repository:
     repo: ppa:morphis/anbox-support
-    update_cache: yes
+    update_cache: no
   tags: anbox
+
+- name: apt-get update
+  shell: apt-get update
+  become: true
+  become_user: root
+  ignore_errors: yes
 
 - name: Install Requirements packages
   apt:
