@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/hackwish/ansible-anbox/compare/v1.2.0...v1.2.1) (2021-11-15)
+
+
+### Bug Fixes
+
+* **ansible:** change anbox installer method ([11c83b7](https://github.com/hackwish/ansible-anbox/commit/11c83b74c5475138edb52a5f28736fa6045d2d96))
+
 # [1.2.0](https://github.com/hackwish/ansible-anbox/compare/v1.1.1...v1.2.0) (2021-11-15)
 
 
