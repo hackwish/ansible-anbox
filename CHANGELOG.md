@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/hackwish/ansible-anbox/compare/v1.1.0...v1.1.1) (2021-11-15)
+
+
+### Bug Fixes
+
+* **ansible:** temp disable conditional ppa install ([e6fd8a4](https://github.com/hackwish/ansible-anbox/commit/e6fd8a414833f6e78b8bdab5d5c4cbb393ee4a8c))
+
 # [1.1.0](https://github.com/hackwish/ansible-anbox/compare/v1.0.1...v1.1.0) (2021-11-15)
 
 
