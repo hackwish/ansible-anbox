@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/hackwish/ansible-anbox/compare/v1.2.2...v1.3.0) (2021-11-15)
+
+
+### Features
+
+* **ansible:** update anbox install version beta to edge. Add addtional reqs  packages ([92df609](https://github.com/hackwish/ansible-anbox/commit/92df609fecdda0c898f8df51dfc6036570ebbef0))
+
 ## [1.2.2](https://github.com/hackwish/ansible-anbox/compare/v1.2.1...v1.2.2) (2021-11-15)
 
 
