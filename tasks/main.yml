@@ -14,12 +14,12 @@
   register: anbox_ppa_focal
   tags: anbox
 
-- name: Add Anbox PPA (Others)
-  ansible.builtin.apt_repository:
-    repo: ppa:morphis/anbox-support
-    update_cache: no
-  when: anbox_ppa_focal.skipped
-  tags: anbox
+# - name: Add Anbox PPA (Others)
+#   ansible.builtin.apt_repository:
+#     repo: ppa:morphis/anbox-support
+#     update_cache: no
+#   when: anbox_ppa_focal.skipped
+#   tags: anbox
 
 - name: apt-get update
   shell: apt-get update
