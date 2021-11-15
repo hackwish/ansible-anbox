@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/hackwish/ansible-anbox/compare/v1.0.1...v1.1.0) (2021-11-15)
+
+
+### Features
+
+* **ansible:** update ppa adding with conditionals ([74fb1e6](https://github.com/hackwish/ansible-anbox/commit/74fb1e67990f9ed5f1d000b3641db520b2fdfea6))
+
 ## [1.0.1](https://github.com/hackwish/ansible-anbox/compare/v1.0.0...v1.0.1) (2021-11-15)
 
 
