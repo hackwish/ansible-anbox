@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/hackwish/ansible-anbox/compare/v1.2.1...v1.2.2) (2021-11-15)
+
+
+### Bug Fixes
+
+* **ansible:** fix anbox playstore installer ([787be33](https://github.com/hackwish/ansible-anbox/commit/787be33d16f9d6c2cf2810e41a4de510bfd43085))
+
 ## [1.2.1](https://github.com/hackwish/ansible-anbox/compare/v1.2.0...v1.2.1) (2021-11-15)
 
 
